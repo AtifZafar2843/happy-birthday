@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas></canvas>
+  <!-- <button class="next-btn" onclick="location.href='page2.html'">Next</button> -->
+  <script src="canvas-petals.js"></script>
+  <audio id="bgMusic" src="song.mp3" loop autoplay muted></audio>
+  <div class="popup-overlay" id="musicPopup">
+    <div class="popup-container">
+      <div>Would you like to play music?🎵</div>
+      <div class="popup-buttons">
+        <button class="popup-btn" id="musicYesBtn">Yes</button>
+        <button class="popup-btn" id="musicNoBtn">No</button>
+      </div>
+    </div>
+  </div>
+  <div class="popup-overlay" id="popup">
+    <div class="popup-container">
+      <div>Aap Habiba Ehtasham hain na?😃</div>
+      <div class="popup-buttons">
+        <button class="popup-btn" id="yesBtn">Yes</button>
+        <button class="popup-btn" id="noBtn">No</button>
+      </div>
+    </div>
+  </div>
+  <div class="popup-overlay" id="popup2" style="display:none">
+    <div class="popup-container">
+      <div>Jhoot na bolein!😤<br/>Habiba hi hain na aap?😐</div>
+      <div class="popup-buttons">
+        <button class="popup-btn" id="yesBtn2">Yes</button>
+      </div>
+    </div>
+  </div>
+  <div class="popup-overlay" id="popup3" style="display:none">
+    <div class="popup-container">
+      <div>Welcome Waqeel Sahiba!😄<br>Janamdin bohot bohot Mubarak ho.🥳<br><br>Apke liye kuch intezamat hain, aayein "Next" par click karke dekhte hain wo kya hai😜</div>
+      <div class="popup-buttons">
+        <button class="popup-btn" id="nextBtn">Next</button>
+      </div>
+    </div>
+  </div>
+  <div class="urdu-popup-overlay" id="urduPopup" style="display:none">
+    <div class="urdu-popup-container" id="urduPopupContainer">
+      <!-- Lines will be injected by JS -->
+    </div>
+  </div>
+  <div class="video-popup-overlay" id="videoPopup" style="display:none">
+    <div class="video-popup-container">
+      <button class="video-popup-close" id="videoCloseBtn">×</button>
+      <video id="surpriseVideo" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div style="font-size:1.1em;color:#b83250;">Again Happy Birthday Habiba!🎉</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
