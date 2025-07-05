@@ -86,7 +86,8 @@ const urduLines = [
   'سالگرہ بہت بہت مبارک ہو، 🎂✨',
   'تمہارا دوست، عاطف ظفر',
   '🫂💗',
-  'so now ek aur intezam hai',
+  'so now birhday wish ho or video na edit ho',
+  'Aisa to nhi ho sakta',
   'I hope you like it',
 ];
 
@@ -104,6 +105,13 @@ function showUrduPopup() {
         container.innerHTML = '';
         const div = document.createElement('div');
         div.className = 'urdu-line urdu-line-bottom-in';
+        
+        // Check if line contains only English text (no Urdu characters)
+        const hasUrdu = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/.test(urduLines[idx]);
+        if (!hasUrdu) {
+          div.classList.add('english-line');
+        }
+        
         div.textContent = urduLines[idx];
         container.appendChild(div);
         setTimeout(() => {
@@ -161,10 +169,21 @@ document.getElementById('videoCloseBtn').onclick = function() {
   const video = document.getElementById('surpriseVideo');
   const bgMusic = document.getElementById('bgMusic');
   vOverlay.classList.remove('active');
-  setTimeout(() => { vOverlay.style.display = 'none'; }, 500);
+  setTimeout(() => { 
+    vOverlay.style.display = 'none'; 
+    showFinalPopup();
+  }, 500);
   video.pause();
   if (bgMusic) bgMusic.muted = false;
 };
+
+function showFinalPopup() {
+  const finalOverlay = document.getElementById('finalPopup');
+  finalOverlay.style.display = '';
+  setTimeout(() => {
+    finalOverlay.classList.add('active');
+  }, 30);
+}
 
 document.getElementById('nextBtn').onclick = showUrduPopup;
 
